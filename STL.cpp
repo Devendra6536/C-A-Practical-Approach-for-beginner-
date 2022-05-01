@@ -150,10 +150,11 @@ dev2.push_back(100);
 dev2.push_back(200);
 dev2.push_back(300);
 
-// vec.push_back(dev);
-// vec.push_back(dev1);
+// matrix:
 vec12.push_back(dev);
 vec12.push_back(dev1);
 vec12.push_back(dev2);
+
+
      return 0;
 }
