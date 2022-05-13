@@ -1,0 +1,23 @@
+#include<iostream>
+#include<bits/stdc++.h>
+ 
+using namespace std;
+int LargetArea(int arr[],int n){
+     int maxArea = 0;
+    for(int i=0;i<n;i++){
+        int minHeight=INT_MAX;
+        for(int j=i;j<n;j++){
+            minHeight = min(minHeight,arr[j]);
+            maxArea = max(maxArea,minHeight*(j-i+1));
+        }    
+      }
+        return maxArea;
+}
+int main()
+{
+        /* code here */
+   int arr[]  = {2,1,5,6,2,3};
+   int n = sizeof(arr)/sizeof(arr[0]);
+   cout<<LargetArea(arr,n);
+    return 0;
+}       

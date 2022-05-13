@@ -2,6 +2,7 @@
 #include<bits/stdc++.h>
  
 using namespace std;
+
 int main()
 {
         /* code here */
@@ -27,6 +28,9 @@ int sums=0,sum=0;
             cout<<endl;
         }
     }
-    cout<<sums;
+    cout<<sums<<endl;
+
+
+    
     return 0;
 }       
