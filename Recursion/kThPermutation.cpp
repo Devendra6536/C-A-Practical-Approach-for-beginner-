@@ -2,14 +2,15 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void printPermutation(vector<vector<int>>&ans){
-    cout<<"The permutation is"<<endl;
+void printPermutation(vector<vector<int>>&ans,int n){
+    cout<<"The Kth Permutation is"<<endl;
+    sort(ans.begin(),ans.end());
     for(int i=0;i<ans.size();i++)
     {
         for(int j=0;j<ans[i].size();j++)
         {
            
-                cout<<ans[i][j]<<" ";
+                if(i == n-1) cout<<ans[i][j]<<" ";
         }
         cout<<endl;
     }
@@ -54,12 +55,12 @@ int main()
     vector<int>ds;
     int freq[arr.size()] = {0};
     printAllPermutation(arr,ans,ds,freq);
-    printPermutation(ans);
+    printPermutation(ans,2);
     vector<vector<int>>anss;
     permutationWithoutSpace(0,arr,anss);
     cout<<"Without any extra Space Complexity";
     int n=1;
-    printPermutation(anss);
+    printPermutation(anss,3);
 
     return 0;
 }
