@@ -135,9 +135,9 @@ node* middle(node* head){
 	
 }
 bool CheckPalindrome(node* head){
-		node* mid = middle(head);
-	  node* temp = mid->next;
-	  mid->next = reverse(temp);
+	node* mid = middle(head);
+	node* temp = mid->next;
+	mid->next = reverse(temp);
 	
 	node* curr = head;
 	node* head1 = mid->next;
@@ -149,9 +149,8 @@ bool CheckPalindrome(node* head){
 		head1 = head1->next;
 	}
 	mid = middle(head);
-	 mid->next = reverse(mid->next);
+	mid->next = reverse(mid->next);
 	return true;
-	
 	
 }
 
