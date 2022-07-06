@@ -7,7 +7,7 @@ int main(){
             if(i==j){
                 cout<<" ";
             }
-            cout<<"**";
+            cout<<" *";
         }
         cout<<endl;
     }
