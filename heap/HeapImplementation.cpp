@@ -22,7 +22,7 @@ class Heap{
             {
                 int parent = index/2;
 
-                if(arr[parent] < arr[index] ){
+                if(arr[parent] > arr[index] ){
                     swap(arr[parent],arr[index]);
                     index = parent;
                 }
@@ -47,7 +47,11 @@ int main()
         h1.insert(55);
         h1.insert(53);
         h1.insert(52);
-        h1.insert(54);
+        h1.insert(51);
+        h1.insert(57);
+        h1.insert(56);
+        h1.insert(58);
+        h1.insert(59);
         h1.print();
 
 
