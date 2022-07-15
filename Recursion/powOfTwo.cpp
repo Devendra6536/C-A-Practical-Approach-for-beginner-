@@ -11,6 +11,15 @@ bool isPowOfTwo(int n){
     return n==1;
     
 }
+bool isPowOfThree(int n){
+    if(n<1) return false;
+    while (n%3 == 0)
+    {
+        n/=3;
+    }
+    return n==1;
+    
+}
 int main()
 {
         /* code here */

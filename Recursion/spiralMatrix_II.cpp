@@ -4,7 +4,7 @@
 using namespace std;
 vector<vector<int>> generateMatrix(int n) {
        vector<vector<int>>v(n,vector<int>(n,1));
-        int top = 0, bottom = n-1, left = 0, right = n-1;
+        int top = 0, left = 0, bottom = n-1, right = n-1;
         int index = 1;
         
         while(left <= right && top <= bottom)

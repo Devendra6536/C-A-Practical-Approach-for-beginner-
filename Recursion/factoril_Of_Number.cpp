@@ -9,7 +9,7 @@ int fact(int n){
 int main(){
 	int n;
 	cin>>n;
-	cout<<"the factorial of" <<n<<" is "<< fact(n);
+	cout<<"the factorial of " <<n<<" is "<< fact(n);
 	
 return 0;
 }
