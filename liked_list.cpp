@@ -162,8 +162,8 @@ int getLength(node* head){
 		cout<<"the list is empty";
 	}
 	else{
-		int count=1;
-		while(temp->next!=NULL){
+		int count=0;
+		while(temp!=NULL){
 			count++;
 			temp=temp->next;
 		}
@@ -391,7 +391,12 @@ int main(){
 	cout<<endl;	
 	
 //	to get the length of the list
-	getLength(head);	
+	cout<<endl;
+	cout<<endl;
+	cout<<"Devendra kumar pal garhikhanpur budaun uttar pradesh india";
+	cout<<endl;
+	display(head);
+	cout<<getLength(head);	
 	
 //	linear search in the linked list
 	linearSearch(head,225);
