@@ -35,32 +35,51 @@ int main(){
 //         cout<<endl;
 //     }
 
-
-
-
-int n=8;
-int index = 1;
-int right=n*n+1;
-
-    for(int i=n;i>0;i--){
-
-        for(int l=n; l>i; l--){
-            cout<<"  ";
-        }
-
-        for(int j=1;j<=i;j++){
-            cout<<index++;
-            cout<<" ";
-        }
-        for(int k = 1;k<=i;k++)
+cout<<endl;
+int n = 5;
+    for(int i=0;i<n*2-1;i++)
+    {
+        for(int j=0;j<n*2;j++)
         {
-            cout<<right++;
-            if(k<i) 
+             if(i==j){
+                cout<<"*";
+            }
+            else if(j==n*2-2-i){
+                cout<<"*";
+            }
+            else 
+            {
                 cout<<" ";
+            }
         }
-        right = right-(i-1)*2-1;
         cout<<endl;
     }
+
+
+
+// int n=8;
+// int index = 1;
+// int right=n*n+1;
+
+//     for(int i=n;i>0;i--){
+
+//         for(int l=n; l>i; l--){
+//             cout<<"  ";
+//         }
+
+//         for(int j=1;j<=i;j++){
+//             cout<<index++;
+//             cout<<" ";
+//         }
+//         for(int k = 1;k<=i;k++)
+//         {
+//             cout<<right++;
+//             if(k<i) 
+//                 cout<<" ";
+//         }
+//         right = right-(i-1)*2-1;
+//         cout<<endl;
+//     }
     
     return 0;
 }

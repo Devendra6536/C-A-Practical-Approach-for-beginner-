@@ -1,2 +1,2 @@
-if(k<i) 
-                cout<<" ";
+else 
+            //     cout<<" ";
