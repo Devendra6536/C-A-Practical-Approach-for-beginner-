@@ -1,2 +1,1 @@
-else 
-            //     cout<<" ";
+cout<<endl;
