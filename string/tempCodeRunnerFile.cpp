@@ -3,7 +3,7 @@
 #include<vector>
 using namespace std;
 string ReverseWord(string s){
-    int n = s.lngth();
+    int n = s.length();
     int ss = "";
     int ans = "";
 
@@ -28,7 +28,7 @@ int main()
 {
         /* code here */
         string s = "the sky is blue";
-        cout<<ReverseWord(s);
-
+       string ss = ReverseWord(s);
+    cout<<ss;
     return 0;
 }
