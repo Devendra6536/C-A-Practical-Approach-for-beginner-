@@ -155,6 +155,10 @@ vec12.push_back(dev);
 vec12.push_back(dev1);
 vec12.push_back(dev2);
 
+array<int,5>arrp;
+arrp.fill(10);
+for(int i=0;i<arrp.size();i++)
+    cout<<arrp[i];
 
      return 0;
 }
