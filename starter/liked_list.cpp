@@ -289,20 +289,13 @@ bool checkLoopFrom_Floyad_cycle_det(node* heads){
 	
 	node* slow = heads;
 	node* fast = heads;
-	if(heads == NULL)
-		return false;
+	if(heads == NULL) return false;
 	while(fast!=NULL && slow!=NULL){
 		fast = fast->next;
-		if(fast!=NULL)
-		{
-			fast = fast->next;
-		}
-		
+		if(fast!=NULL) fast = fast->next;		
 		slow = slow->next;
 		if(slow==fast)
-		{
 			return true;
-		}
 	}
 	return false;
 	
@@ -336,15 +329,15 @@ node* getStartingPoint(node* head){
 	if(head == NULL){
 		return NULL;
 	}
-	node* intersection  = checkLoopFrom_Floyadcycledet(head);
+	node* ction  = checkLoopFrom_Floyadcycledet(head);
 	node* slow  = head;
 	
-	if(intersection == NULL)
+	if(ction == NULL)
         return NULL;
         
-	while(slow!=intersection){
+	while(slow!=ction){
 		slow = slow->next;
-		intersection = intersection->next;
+		ction = ction->next;
 	}
 	return slow;
 	
