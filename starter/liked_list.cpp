@@ -342,6 +342,28 @@ node* getStartingPoint(node* head){
 	return slow;
 	
 }
+
+ node* reverseKGroup(node* head, int k) {
+        if(head==NULL && head->next==NULL) return head;
+    
+        int len = getLength(head);
+    
+        if(len < k) return head;
+        
+        node* curr = head;
+        node* prev = NULL;
+        node* next = NULL;
+        int cnt = 0;
+        while(curr && cnt++<k ){
+            next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+        }
+        if(next) head->next = reverseKGroup(next,k);
+        
+        return prev;
+    }
 int main(){
 	
 	node* head=NULL;
@@ -350,7 +372,19 @@ int main(){
 	insertAtEnd(head,2);
 	insertAtEnd(head,3);
 	insertAtEnd(head,4);
+	insertAtEnd(head,5);
 	display(head);
+	reverseKGroup(head,2);
+	display(head);
+	cout<<endl;
+	cout<<endl;
+	cout<<endl;
+	cout<<endl;
+	cout<<endl;
+	cout<<endl;
+	cout<<endl;
+	cout<<endl;
+	cout<<endl;
 	cout<<endl;
 	
 //	insert element at the begning
