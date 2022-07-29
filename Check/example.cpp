@@ -72,7 +72,7 @@
 
 
 
-#include<iostream>
+/*#include<iostream>
 #include<bits/stdc++.h>
 #include<vector>
 using namespace std;
@@ -90,9 +90,79 @@ int inversion(vector<int>& num){
 }
 int main()
 {
-        /* code here */
+        /* code here 
         vector<int>nums{5,3,2,1,4};
         cout<<inversion(nums);
+
+    return 0;
+}
+*/
+
+
+/*#include<iostream>
+#include<bits/stdc++.h>
+#include<vector>
+using namespace std;
+void sub(int index, vector<int>&arr, vector<int>ds){
+    if(index == arr.size()){
+        int sum=0;
+        for(auto &it:ds){
+            sum+=it;
+            cout<<it<<" ";
+        }
+        cout<<endl;
+        cout<<sum<<" ";
+        cout<<endl;
+        return;
+    }
+    ds.push_back(arr[index]);
+    sub(index+1,arr,ds);
+    ds.pop_back();
+    sub(index+1,arr,ds);
+}
+int main()
+{
+        /* code here */
+        /*vector<int>arr{3,1,2};
+        vector<int>ds;
+        sub(0,arr,ds);
+
+    return 0;
+
+}*/
+
+#include<iostream>
+#include<bits/stdc++.h>
+#include<vector>
+using namespace std;
+void display(vector<int>&ds){
+    for(auto it:ds){
+        cout<<it<<" ";
+    }
+    cout<<endl;
+}
+void s(int index, int sum,vector<int>&arr,vector<int>&ds,int target){
+    if(index == arr.size()){
+        if(sum==target)
+        {
+            display(ds);
+        }
+        return;
+    }
+
+    ds.push_back(arr[index]);
+    sum = sum+arr[index];
+    s(index+1,sum,arr,ds,target);
+    sum-=arr[index];
+    ds.pop_back();
+    s(index+1,sum,arr,ds,target);
+}
+int main()
+{
+        /* code here */
+        vector<int>arr{1,2,1};
+        vector<int>ds;
+        s(0,0,arr,ds,2);
 
     return 0;
 }

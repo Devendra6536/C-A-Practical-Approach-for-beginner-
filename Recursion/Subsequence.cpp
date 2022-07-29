@@ -75,13 +75,13 @@ int main(){
 	cout<<"Enter the size of array";
 	cin>>n;
 	int a[n];
-	int s,sum=2;
+	int s,sum=3;
 	for(int i=0;i<n;i++){
 		cin>>a[i];
 	}
 	vector<int>V;
 	cout<<"Subsequence are "<<endl;
-//	f1(0,V,a,n,sum,0);
+	// f1(0,V,a,n,sum,0);
 //f2(0,V,a,n,sum,0);
 int count = f3(0,a,n,sum,0);
 cout<<count;
