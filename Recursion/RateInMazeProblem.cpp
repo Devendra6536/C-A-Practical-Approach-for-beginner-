@@ -20,24 +20,28 @@ void solve(int i,int j,vector<vector<int>> &m, int n,vector<string>&ans, string 
             return;
         }
         
+        // downward
         if(i+1<n && !vis[i+1][j] && m[i+1][j]==1){
             vis[i][j]=1;
             solve(i+1,j,m,n,ans,move+"D",vis);
             vis[i][j]=0;
         }
         
+        // leftWard
         if(j-1>=0 && !vis[i][j-1] && m[i][j-1]==1){
             vis[i][j]=1;
             solve(i,j-1,m,n,ans,move+"L",vis);
             vis[i][j]=0;
         }
         
+        // RightWard
         if(j+1<n && !vis[i][j+1] && m[i][j+1]==1){
             vis[i][j]=1;
             solve(i,j+1,m,n,ans,move+"R",vis);
             vis[i][j]=0;
         }
         
+        // upWard
         if(i-1>=0 && !vis[i-1][j] && m[i-1][j]==1){
             vis[i][j]=1;
             solve(i-1,j,m,n,ans,move+"U",vis);
