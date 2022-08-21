@@ -3,14 +3,17 @@
  
 using namespace std;
 void print(vector<int>v){
+    int sum = 0;
     int n = v.size();
     for(int i=0;i<n;i++){
-        cout<<v[i]<<" ";
+        // cout<<v[i]<<" ";
+
+    sum+=v[i];
     }
+    cout<<sum<<endl;
     if(v.size()==0){
 		cout<<"{}";
 	}
-    cout<<endl;
 }
 void SubSequence(int index,int arr[],vector<int>v,int n){
     if(index >= n){
@@ -27,7 +30,7 @@ void SubSequence(int index,int arr[],vector<int>v,int n){
 int main()
 {
         /* code here */
-    int arr[] = {3,1,2};
+    int arr[] = {2,4,-2};
     int n = sizeof(arr)/sizeof(arr[0]);
     vector<int>V;
     SubSequence(0,arr,V,n);
