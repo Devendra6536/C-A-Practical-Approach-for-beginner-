@@ -81,8 +81,8 @@ int main(){
 	}
 	vector<int>V;
 	cout<<"Subsequence are "<<endl;
-	// f1(0,V,a,n,sum,0);
+	f1(0,V,a,n,sum,0);
 //f2(0,V,a,n,sum,0);
-int count = f3(0,a,n,sum,0);
-cout<<count;
+// int count = f3(0,a,n,sum,0);
+// cout<<count;
 }
