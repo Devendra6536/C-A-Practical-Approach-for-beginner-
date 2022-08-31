@@ -14,6 +14,7 @@ class Node{
             right = NULL;
         }
 };
+
 void LevelOreder(Node* root){
     queue<Node*>q;
     q.push(root);
@@ -26,6 +27,7 @@ void LevelOreder(Node* root){
         if(temp->right) q.push(temp->right);
     }
 }
+
 void LevelOrderTravLableWise(Node* root){
     queue<Node*>q;
     q.push(root);
@@ -48,6 +50,37 @@ void LevelOrderTravLableWise(Node* root){
         }
     }
 }
+
+void ReverseLevelOrderTravLableWise(Node* root){
+    queue<Node*>q;
+    stack<int>st;
+    q.push(root);
+    q.push(NULL);
+
+    while(!q.empty())
+    {
+        Node* temp = q.front();
+        q.pop();
+
+        if(temp != NULL)
+        {
+            st.push(temp->data);
+            if(temp->left) q.push(temp->left);
+            if(temp->right) q.push(temp->right);
+        }
+        else{
+            cout<<endl;
+            if(!q.empty()) q.push(NULL);
+
+            while(!st.empty())
+            {
+                cout<<st.top()<<" ";
+                st.pop();
+            }
+        }
+    }
+}
+
 void InorderTraversal(Node* root){
 
     if(root == NULL) return ;
@@ -56,6 +89,7 @@ void InorderTraversal(Node* root){
     InorderTraversal(root->right);
 
 }
+
 void PreorderTraversal(Node* root){
 
     if(root == NULL) return ;
@@ -87,19 +121,56 @@ Node* buildTree(Node* root){
     cout<<"Enter the data for the right child"<<endl;
     root->right = buildTree(root->right);
     return root;
+}
+void BuildFromLevelOrderTraversal(Node* &root)
+{
+    queue<Node*>q;
+    cout<<"Enter the data for the root node "<<endl;
+    int data;
+    cin>>data;
+    root = new Node(data);
+    q.push(root);
 
+    while(!q.empty()){
+        Node* temp = q.front();
+        q.pop();
 
-
+        cout<<"Enter the left child of "<<temp->data<<endl;
+        int leftData;
+        cin>>leftData;
+        if(leftData != -1)
+        {
+            temp->left = new Node(leftData);
+            q.push(temp->left);
+        }
+        cout<<"Enter the right child of "<<temp->data<<endl;
+        int rightData;
+        cin>>rightData;
+        if(rightData != -1)
+        {
+            temp->right = new Node(rightData);
+            q.push(temp->right);
+        }
+    }
+}
+void countNoOfNode(Node* root,int &cnt){
+    if(root == NULL) return;
+    countNoOfNode(root->left,cnt);
+    if(root->left == NULL && root->right == NULL) cnt++;
+    countNoOfNode(root->right,cnt);
 }
 int main()
 {
         /* code here */
         Node* root=NULL;
-        root = buildTree(root);
+        // root = buildTree(root);
 
+        // Buil from levelOrder Traversal
+        BuildFromLevelOrderTraversal(root);
 // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
-
-
+// 1
+// 3 5
+// 7 11 17
         cout<<endl;
         cout<<endl;
         cout<<endl;
@@ -111,6 +182,11 @@ int main()
         // LevelorderTraversal using Level Wise
         cout<<"LevelorderTraversal of a tree using Level wise"<<endl; 
         LevelOrderTravLableWise(root);
+        cout<<endl;
+
+        // LevelorderTraversal using Level Wise
+        cout<<"LevelorderTraversal of a tree using Level wise"<<endl; 
+        ReverseLevelOrderTravLableWise(root);
         cout<<endl;
         
         // inoreder traversal 
@@ -127,5 +203,10 @@ int main()
         PostOrderTraversal(root);
         cout<<endl;
 
+
+        // count the no of node 
+        int cnt=0;
+        countNoOfNode(root,cnt);
+        cout<<"Total no of leaf node in the tree " << cnt;
     return 0;
 }
