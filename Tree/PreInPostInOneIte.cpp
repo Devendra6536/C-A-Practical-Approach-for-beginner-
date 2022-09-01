@@ -15,19 +15,20 @@ vector<vector<int>> traveral(Node* root){
 
         Node* temp = it.first;
         int num = it.second;
+
         if(num == 1){
             pre.push_back(temp->data);
             num++;
             st.push({temp,num});
             if(temp->left) st.push({temp->left,1});
         }
-        if(num == 2){
+        else if(num == 2){
             in.push_back(temp->data);
             num++;
             st.push({temp,num});
             if(temp->right) st.push({temp->right,1});
         }
-        if(num == 3){
+        else(num == 3){
             post.push_back(temp->data);
         }
         
