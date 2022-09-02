@@ -159,6 +159,17 @@ void countNoOfNode(Node* root,int &cnt){
     if(root->left == NULL && root->right == NULL) cnt++;
     countNoOfNode(root->right,cnt);
 }
+bool GetPath(Node* root,vector<int>&v,int khoj){
+    if(root == NULL) return false;
+
+    v.push_back(root->data);
+    if(root->data == khoj ) return true;
+    bool lt = GetPath(root->left,v,khoj);
+    bool rt = GetPath(root->right,v,khoj);
+    if(lt || rt) return true;
+    v.pop_back();
+    return false;
+}
 int main()
 {
         /* code here */
@@ -208,5 +219,17 @@ int main()
         int cnt=0;
         countNoOfNode(root,cnt);
         cout<<"Total no of leaf node in the tree " << cnt;
+        cout<<endl<<endl<<endl<<endl;
+        vector<int>v;
+        int khoj = 7;
+        if(GetPath(root,v,khoj)) 
+        {
+            cout<<"The path from root to Node "<<khoj <<" is ----->>>> ";
+            for(int i=0;i<v.size();i++){
+                cout<<v[i]<<" ";
+            }
+            cout<<endl;
+        }
+        else cout<<"The Node is not present that you enter";
     return 0;
 }
