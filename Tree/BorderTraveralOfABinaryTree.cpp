@@ -6,6 +6,11 @@ using namespace std;
 /* Boundary Traversal  = leftBoundary Nodes eccluding(leaf node) +
  All Leaves Nodes + rightBoundary Nodes eccluding(leaf node)*/
 
+
+/*Time Complexity: O(N).
+Reason: The time complexity will be O(H) + O(H) + O(N) which is ≈ O(N)
+Space Complexity: O(N)
+Reason: Space is needed for the recursion stack while adding leaves. In the worst case (skewed tree), space complexity can be O(N).*/
 bool leftBoundaryTraversal(Node* root,vector<int>&ds){
     if(root == NULL) return false;
     if(root->left == NULL && root->right==NULL) return true;
