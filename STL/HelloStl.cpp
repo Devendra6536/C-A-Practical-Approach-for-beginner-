@@ -41,5 +41,13 @@ int main()
             cout<<endl;
         }
 
+
+        for(auto vectr:vec){
+            for(auto it:vectr){
+                cout<<it<<" ";
+            }
+            cout<<endl;
+        }
+
     return 0;
 }
