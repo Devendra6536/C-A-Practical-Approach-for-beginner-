@@ -35,6 +35,22 @@ ListNode* interSection(ListNode* head1,ListNode* head2){
         head2 = head2->next;
     }
 }
+
+
+
+ListNode* InterSectionUsingshortCODE(ListNode* head1,listNode* head2){
+    ListNode* a = head1;
+    ListNode* b = head2;
+    while (a!=b){
+        a = a == NULL ? head2 : a = a->next;
+        b = b == NULL ? head1 : a = b->next;
+    }
+    {
+        /* code */
+    }
+    
+
+}
 int main()
 {
         /* code here */

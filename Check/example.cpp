@@ -131,7 +131,7 @@ int main()
 
 }*/
 
-#include<iostream>
+/*#include<iostream>
 #include<bits/stdc++.h>
 #include<vector>
 using namespace std;
@@ -159,10 +159,52 @@ void s(int index, int sum,vector<int>&arr,vector<int>&ds,int target){
 }
 int main()
 {
-        /* code here */
+        /* code here 
         vector<int>arr{1,2,1};
         vector<int>ds;
         s(0,0,arr,ds,2);
 
     return 0;
+}*/
+
+
+
+// C++ program for function overloading
+#include <bits/stdc++.h>
+
+using namespace std;
+class Geeks
+{
+	public:
+	
+	// function with 1 int parameter
+	int func(int x)
+	{
+        return x;
+	}
+	int func(double x)
+	{
+        return x;
+	}
+	double func(int x, int y)
+	{
+		// cout << "value of x and y is " << x << ", " << y << endl;
+        return x*y;
+	}
+};
+
+int main() {
+	
+	Geeks obj1;
+	
+	// Which function is called will depend on the parameters passed
+	// The first 'func' is called
+	cout<<obj1.func(7)<<endl;
+	
+	// The second 'func' is called
+	cout<<obj1.func(9.00)<<endl;
+	
+	// The third 'func' is called
+	cout<<obj1.func(85,64)<<endl;
+	return 0;
 }
