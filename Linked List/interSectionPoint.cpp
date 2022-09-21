@@ -45,9 +45,6 @@ ListNode* InterSectionUsingshortCODE(ListNode* head1,listNode* head2){
         a = a == NULL ? head2 : a = a->next;
         b = b == NULL ? head1 : a = b->next;
     }
-    {
-        /* code */
-    }
     
 
 }

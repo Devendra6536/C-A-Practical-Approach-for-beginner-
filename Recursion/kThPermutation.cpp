@@ -50,7 +50,7 @@ int main()
 {
         /* code here */
 
-    vector<int>arr{1,2,3};
+    vector<int>arr{1,2,3,4};
     vector<vector<int>>ans;
     vector<int>ds;
     int freq[arr.size()] = {0};
