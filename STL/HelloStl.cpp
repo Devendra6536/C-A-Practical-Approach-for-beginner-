@@ -49,5 +49,12 @@ int main()
             cout<<endl;
         }
 
+    pair<int,int>pr;
+    pr.first = 1;
+    pr.second = 10;
+    
+
+
+    
     return 0;
 }
