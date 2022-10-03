@@ -39,5 +39,12 @@ int main()
         p.d2();
         p.d3();
         p.pet();
+
+
+        int m = 984;
+        int b = 10;
+        float c;
+        c = m/b;
+        cout<< endl <<  c<<endl;
     return 0;
 }
