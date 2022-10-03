@@ -1,6 +1,7 @@
 #include<iostream>
 #include<bits/stdc++.h>
 #include<vector>
+// this is pure virtual function example
 using namespace std;
 class A{
     public:
