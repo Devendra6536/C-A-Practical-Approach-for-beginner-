@@ -1,0 +1,2 @@
+A m;
+        m.display();
