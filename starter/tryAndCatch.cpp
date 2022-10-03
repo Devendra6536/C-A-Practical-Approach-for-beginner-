@@ -1,25 +1,23 @@
-#include <iostream>
+#include<iostream>
+#include<bits/stdc++.h>
+#include<vector>
 using namespace std;
-
-// This function signature is fine by the compiler, but not recommended.
-// Ideally, the function should specify all uncaught exceptions and function
-// signature should be "void fun(int *ptr, int x) throw (int *, int)"
-void fun(int *ptr, int x)
-{
-	if (ptr == NULL)
-		throw ptr;
-	if (x == 0)
-		throw x;
-	/* Some functionality */
-}
-
 int main()
 {
-	try {
-	fun(NULL, 0);
-	}
-	catch(...) {
-		cout << "Caught exception from fun()";
-	}
-	return 0;
+        /* code here */
+        int age=4;
+        try
+        {
+            
+            if(age>=18) cout<< "You are eligible for voting "<<endl;
+            else throw(age);
+        }
+        catch(int num)
+        {
+            cout<<"Access is denied"<<endl;
+            cout<<"your age is "<<num;
+        }
+        
+
+    return 0;
 }
