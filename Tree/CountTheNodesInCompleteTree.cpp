@@ -2,6 +2,9 @@
 #include<bits/stdc++.h>
 #include<vector>
 using namespace std;
+// we can count the no of nodes using any traversal like-> pre, post, level, inoreder traversal  but the T.C = O(N)
+
+// this approach is O(logN)^2
 int countNodes(TreeNode* root) {
      if(root == NULL) return 0;
         
