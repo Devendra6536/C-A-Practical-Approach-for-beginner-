@@ -14,13 +14,13 @@ public:
         this->left = NULL;
         this->right = NULL;
     }
-}
-void insertIntoBST(Node* root,int data){
+};
+Node* insertIntoBST(Node* root,int data){
 
     // base case
     if(root == NULL){
         root = new Node(data);
-        return;
+        return root;
     }
     else{
         // if the data is less than root
@@ -31,7 +31,7 @@ void insertIntoBST(Node* root,int data){
     }
     return root;
 }
-Node* insertData(Node* root){
+void insertData(Node* &root){
 
     int data;
     cin >> data;
@@ -41,12 +41,18 @@ Node* insertData(Node* root){
         cin >> data;
     }
 }
+void printBST(Node* root){
+    if(root == NULL) return;
+    printBST(root->left);
+    cout << "hello " << root ->data <<" ";
+    printBST(root->right);
+}
 int main()
 {
         /* code here */
         cout<< "Enter the data "<<endl;
-        Node* root;
-        root = insertData(root);
+        Node* root=NULL;
+        insertData(root);
         printBST(root);
 
     return 0;
