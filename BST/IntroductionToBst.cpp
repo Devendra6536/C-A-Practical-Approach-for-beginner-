@@ -142,50 +142,6 @@ Node* maxValue(Node* root){
     return root;
 }
 
-Node* DeletionFromBST(Node* root,int val){
-    if(root == NULL) return root;
-
-    if(root->data == val){
-        // deletion logic
-        // 0 child
-        if(root->left==NULL && root->right){
-            delete root;
-            return NULL;
-        }
-
-        // 1 child
-        // Left child
-        if(root->left != NULL && root->right == NULL){
-            Node* temp =  root->left;
-            delete root;
-            return temp;
-        }
-        // Right child
-        if(root->left == NULL && root->right != NULL)
-            Node* temp =  root->right;
-            delete root;
-            return temp;
-        }
-    
-        // root have two child
-        if(root->left && root->right){
-            int min_val = minValue(root->right)->data;
-            root->data = min_val;
-            root->right = DeletionInBST(root->right,min_val);
-            return root;
-        }
-    }
-    else if(root->data > val){
-        // go to in the left part
-        root ->left  = DeletionInBST(root->left,val);
-        return root;
-    }
-    else{
-        // go to in the right part
-        root->right = DeletionInBST(root->right,val);
-        return root;
-    }
-}
 int main()
 {
         /* code here */
@@ -204,18 +160,16 @@ int main()
         cout<<endl;
         cout<<"Preorder traversal -> ";
         PreorderTraversal(root);
-        cout<<endl;
+        cout<<endl<<endl<<endl<<endl;
 
         cout<<"Search in a BST"<<endl;
         searchINBST(root,11)?cout<<"Present":cout<<"Not Present";
-
+        cout<<endl<<endl<<endl<<endl;
 
         cout<<endl<<"Search Node in a bst"<<endl;
         Node* temp = searchNodeInABST(root,11);
         PreorderTraversal(temp);
-        cout<<endl;
-        cout<<endl;
-        cout<<endl;
+        cout<<endl<<endl<<endl<<endl;
 
         cout<<"Search Node in a bst using iterative way"<<endl;
         Node* temp1 = searchBST(root,11);
@@ -227,8 +181,7 @@ int main()
         cout<<"Min value in a bst is -> "<<minValue(root) ->data;
         cout<<endl<<endl<<endl<<endl;
         cout<<"Max value in a bst is -> "<<maxValue(root) ->data;
-    
-        root = DeletionFromBST(root,11);
+
     return 0;
 }
 
