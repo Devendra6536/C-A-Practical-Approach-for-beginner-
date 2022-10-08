@@ -74,6 +74,40 @@ void LevelOrderTravLableWise(Node* root){
         }
     }
 }
+void InorderTraversal(Node* root){
+
+    if(root == NULL) return ;
+    InorderTraversal(root->left);
+    cout<<root->data<<" ";
+    InorderTraversal(root->right);
+
+}
+
+void PreorderTraversal(Node* root){
+
+    if(root == NULL) return ;
+    cout<<root->data<<" ";
+    PreorderTraversal(root->left);
+    PreorderTraversal(root->right);
+
+}
+
+void PostOrderTraversal(Node* root){
+
+    if(root == NULL) return ;
+    PostOrderTraversal(root->left);
+    PostOrderTraversal(root->right);
+    cout<<root->data<<" ";
+
+}
+bool searchINBST(Node* root,int val){
+    if(root == NULL) return false;
+
+
+    if(root -> data == val) return true;
+    else if(val > root -> data ) searchINBST(root->right,val);
+    else searchINBST(root->left,val);
+}
 int main()
 {
         /* code here */
@@ -84,5 +118,21 @@ int main()
         cout<<"Print The BST"<<endl;
         LevelOrderTravLableWise(root);
 
+        cout<<"Inorder traversal  -> ";
+        InorderTraversal(root);
+        cout<<endl;
+        cout<<"Postorder traversal";
+        PostOrderTraversal(root);
+        cout<<endl;
+        cout<<"Preorder traversal";
+        PreorderTraversal(root);
+        cout<<endl;
+
+        cout<<"Search in a BST"<<endl;
+        searchINBST(root,35)?cout<<"Present":cout<<"Not Present";
+
+
     return 0;
 }
+
+// 10 7 12 4 9 11 19 3 5 8 17 20 -1
