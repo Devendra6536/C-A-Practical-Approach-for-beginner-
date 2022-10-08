@@ -114,7 +114,7 @@ Node* DeletionFromBST(Node* root,int val){
     if(root->data == val){
         // deletion logic
         // 0 child
-        if(root->left==NULL && root->right){
+        if(root->left==NULL && root->right==NULL){
             delete root;
             return NULL;
         }
@@ -152,6 +152,7 @@ Node* DeletionFromBST(Node* root,int val){
         return root;
     }
 }
+
 int main()
 {
         /* code here */
@@ -173,7 +174,7 @@ int main()
         cout<<endl;
 
     
-        root = DeletionFromBST(root,50);
+        root = DeletionFromBST(root,100);
         cout<<endl;
         cout<<"Print The BST"<<endl;
         LevelOrderTravLableWise(root);

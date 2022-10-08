@@ -142,6 +142,24 @@ Node* maxValue(Node* root){
     return root;
 }
 
+int findCeil(Node* root,int key){
+    if(root == NULL) return 0;
+    int ceil = -1;
+    while(root){
+        if(root ->data == key){
+            ceil = root->data;
+            return ceil;
+        }
+        if(root->data > key){
+            ceil = root->data;
+            root = root->left;
+        }
+        else {
+            root = root->right;
+        }
+    }
+    return ceil;
+}
 int main()
 {
         /* code here */
@@ -182,6 +200,8 @@ int main()
         cout<<endl<<endl<<endl<<endl;
         cout<<"Max value in a bst is -> "<<maxValue(root) ->data;
 
+        cout<<endl<<endl<<endl<<endl;
+        cout<<"Ceiling value in the bst is "<<findCeil(root,10);
     return 0;
 }
 
