@@ -1,5 +1,6 @@
 #include<iostream>
 #include<bits/stdc++.h>
+#include<queue>
 #include<vector>
 using namespace std;
 
@@ -15,19 +16,23 @@ public:
         this->right = NULL;
     }
 };
-Node* insertIntoBST(Node* root,int data){
+Node* insertIntoBST(Node* root,int d){
 
     // base case
-    if(root == NULL){
-        root = new Node(data);
+    if(root == NULL)
+    {
+        root = new Node(d);
         return root;
     }
     else{
         // if the data is less than root
-        if(data > root->data) root->right = insertIntoBST(root->right,data);
-
+        if(d > root->data) {
+            root->right = insertIntoBST(root->right,d);
+        }
         // if the data is greater than root
-        else root->left = insertIntoBST(root->left,data);
+        else{
+            root->left = insertIntoBST(root->left,d);
+        } 
     }
     return root;
 }
@@ -37,7 +42,7 @@ void insertData(Node* &root){
     cin >> data;
 
     while(data != -1){
-        insertIntoBST(root,data);
+        root = insertIntoBST(root,data);
         cin >> data;
     }
 }
@@ -47,13 +52,37 @@ void printBST(Node* root){
     cout << "hello " << root ->data <<" ";
     printBST(root->right);
 }
+void LevelOrderTravLableWise(Node* root){
+    queue<Node*>q;
+    q.push(root);
+    q.push(NULL);
+
+    while(!q.empty())
+    {
+        Node* temp = q.front();
+        q.pop();
+
+        if(temp != NULL)
+        {
+            cout<<temp->data<<" ";
+            if(temp->left) q.push(temp->left);
+            if(temp->right) q.push(temp->right);
+        }
+        else{
+            cout<<endl;
+            if(!q.empty()) q.push(NULL);
+        }
+    }
+}
 int main()
 {
         /* code here */
         cout<< "Enter the data "<<endl;
         Node* root=NULL;
         insertData(root);
-        printBST(root);
+        // printBST(root);
+        cout<<"Print The BST"<<endl;
+        LevelOrderTravLableWise(root);
 
     return 0;
 }
