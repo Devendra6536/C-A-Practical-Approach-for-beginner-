@@ -122,17 +122,25 @@ Node* searchNodeInABST(Node* root, int val){
 
 
 // Iterative approach 
-Node* searchBST(Node* root, int val) {
-        Node* temp = root;
-        
-        while(temp){
-            if(temp->val == val) return temp;
-            
-            if(temp->val < val) temp = temp->right;
-            else temp = temp->left;
+Node* searchBST(Node* root, int val) {        
+        while(root && root->data!=val){
+            root = root->data > val ? root->left : root->right;
         }
-        return temp;
+        return root;
     }
+
+Node* minValue(Node* root){
+    while(root->left){
+        root = root->left;
+    }
+    return root;
+}
+Node* maxValue(Node* root){
+    while(root->right){
+        root = root->right;
+    }
+    return root;
+}
 int main()
 {
         /* code here */
@@ -146,10 +154,10 @@ int main()
         cout<<"Inorder traversal  -> ";
         InorderTraversal(root);
         cout<<endl;
-        cout<<"Postorder traversal";
+        cout<<"Postorder traversal -> ";
         PostOrderTraversal(root);
         cout<<endl;
-        cout<<"Preorder traversal";
+        cout<<"Preorder traversal -> ";
         PreorderTraversal(root);
         cout<<endl;
 
@@ -157,10 +165,29 @@ int main()
         searchINBST(root,11)?cout<<"Present":cout<<"Not Present";
 
 
-        cout<<"Search Node in a bst"<<endl;
+        cout<<endl<<"Search Node in a bst"<<endl;
         Node* temp = searchNodeInABST(root,11);
         PreorderTraversal(temp);
+        cout<<endl;
+        cout<<endl;
+        cout<<endl;
 
+        cout<<"Search Node in a bst using iterative way"<<endl;
+        Node* temp1 = searchBST(root,11);
+        PreorderTraversal(temp1);
+
+
+
+        cout<<endl<<endl<<endl<<endl;
+        cout<<"Min value in a bst is -> ";
+        Node* temp3 = minValue(root);
+        cout<<temp3->data;
+
+
+        cout<<endl<<endl<<endl<<endl;
+        cout<<"Max value in a bst is -> ";
+         temp3 = maxValue(root);
+        cout<<temp3->data;
     return 0;
 }
 
