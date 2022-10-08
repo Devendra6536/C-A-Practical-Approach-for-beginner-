@@ -160,6 +160,23 @@ int findCeil(Node* root,int key){
     }
     return ceil;
 }
+int findFloor(Node* root,int key){
+    int floor = 0;
+    while(root){
+        if(root->data == key){
+            floor = root->data;
+            return floor;
+        }
+        if(root->data > key){
+            root = root->left;
+        }
+        else{
+            floor = root->data;
+            root = root->right;
+        }
+    }
+    return floor;
+}
 int main()
 {
         /* code here */
@@ -202,7 +219,10 @@ int main()
 
         cout<<endl<<endl<<endl<<endl;
         cout<<"Ceiling value in the bst is "<<findCeil(root,10);
+
+        cout<<endl<<endl<<endl<<endl;
+        cout<<"floor value in the bst is "<<findFloor(root,8);
     return 0;
 }
 
-// 10 7 12 4 9 11 19 3 5 8 17 20 -1
+// 10 7 12 4 11 19 3 5 8 17 20 -1
