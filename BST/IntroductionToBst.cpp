@@ -105,9 +105,34 @@ bool searchINBST(Node* root,int val){
 
 
     if(root -> data == val) return true;
-    else if(val > root -> data ) searchINBST(root->right,val);
-    else searchINBST(root->left,val);
+
+    if(val > root -> data ) return searchINBST(root->right,val);
+    else return searchINBST(root->left,val);
 }
+Node* searchNodeInABST(Node* root, int val){
+    if(root == NULL) return root;
+
+    if(root ->data == val) return root;
+
+    if(root->data < val) return searchNodeInABST(root->right,val);
+    else return searchNodeInABST(root->left, val);
+
+}
+
+
+
+// Iterative approach 
+Node* searchBST(Node* root, int val) {
+        Node* temp = root;
+        
+        while(temp){
+            if(temp->val == val) return temp;
+            
+            if(temp->val < val) temp = temp->right;
+            else temp = temp->left;
+        }
+        return temp;
+    }
 int main()
 {
         /* code here */
@@ -129,8 +154,12 @@ int main()
         cout<<endl;
 
         cout<<"Search in a BST"<<endl;
-        searchINBST(root,35)?cout<<"Present":cout<<"Not Present";
+        searchINBST(root,11)?cout<<"Present":cout<<"Not Present";
 
+
+        cout<<"Search Node in a bst"<<endl;
+        Node* temp = searchNodeInABST(root,11);
+        PreorderTraversal(temp);
 
     return 0;
 }
