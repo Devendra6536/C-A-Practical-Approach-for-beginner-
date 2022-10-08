@@ -46,12 +46,6 @@ void insertData(Node* &root){
         cin >> data;
     }
 }
-void printBST(Node* root){
-    if(root == NULL) return;
-    printBST(root->left);
-    cout << "hello " << root ->data <<" ";
-    printBST(root->right);
-}
 void LevelOrderTravLableWise(Node* root){
     queue<Node*>q;
     q.push(root);
@@ -100,34 +94,6 @@ void PostOrderTraversal(Node* root){
     cout<<root->data<<" ";
 
 }
-bool searchINBST(Node* root,int val){
-    if(root == NULL) return false;
-
-
-    if(root -> data == val) return true;
-
-    if(val > root -> data ) return searchINBST(root->right,val);
-    else return searchINBST(root->left,val);
-}
-Node* searchNodeInABST(Node* root, int val){
-    if(root == NULL) return root;
-
-    if(root ->data == val) return root;
-
-    if(root->data < val) return searchNodeInABST(root->right,val);
-    else return searchNodeInABST(root->left, val);
-
-}
-
-
-
-// Iterative approach 
-Node* searchBST(Node* root, int val) {        
-        while(root && root->data!=val){
-            root = root->data > val ? root->left : root->right;
-        }
-        return root;
-    }
 
 Node* minValue(Node* root){
     while(root->left){
@@ -161,7 +127,7 @@ Node* DeletionFromBST(Node* root,int val){
             return temp;
         }
         // Right child
-        if(root->left == NULL && root->right != NULL)
+        if(root->left == NULL && root->right != NULL){
             Node* temp =  root->right;
             delete root;
             return temp;
@@ -171,18 +137,18 @@ Node* DeletionFromBST(Node* root,int val){
         if(root->left && root->right){
             int min_val = minValue(root->right)->data;
             root->data = min_val;
-            root->right = DeletionInBST(root->right,min_val);
+            root->right = DeletionFromBST(root->right,min_val);
             return root;
         }
     }
     else if(root->data > val){
         // go to in the left part
-        root ->left  = DeletionInBST(root->left,val);
+        root ->left  = DeletionFromBST(root->left,val);
         return root;
     }
     else{
         // go to in the right part
-        root->right = DeletionInBST(root->right,val);
+        root->right = DeletionFromBST(root->right,val);
         return root;
     }
 }
@@ -206,30 +172,22 @@ int main()
         PreorderTraversal(root);
         cout<<endl;
 
-        cout<<"Search in a BST"<<endl;
-        searchINBST(root,11)?cout<<"Present":cout<<"Not Present";
-
-
-        cout<<endl<<"Search Node in a bst"<<endl;
-        Node* temp = searchNodeInABST(root,11);
-        PreorderTraversal(temp);
-        cout<<endl;
-        cout<<endl;
-        cout<<endl;
-
-        cout<<"Search Node in a bst using iterative way"<<endl;
-        Node* temp1 = searchBST(root,11);
-        PreorderTraversal(temp1);
-
-
-
-        cout<<endl<<endl<<endl<<endl;
-        cout<<"Min value in a bst is -> "<<minValue(root) ->data;
-        cout<<endl<<endl<<endl<<endl;
-        cout<<"Max value in a bst is -> "<<maxValue(root) ->data;
     
-        root = DeletionFromBST(root,11);
+        root = DeletionFromBST(root,50);
+        cout<<endl;
+        cout<<"Print The BST"<<endl;
+        LevelOrderTravLableWise(root);
+
+        cout<<"Inorder traversal  -> ";
+        InorderTraversal(root);
+        cout<<endl;
+        cout<<"Postorder traversal -> ";
+        PostOrderTraversal(root);
+        cout<<endl;
+        cout<<"Preorder traversal -> ";
+        PreorderTraversal(root);
+        cout<<endl;
     return 0;
 }
 
-// 10 7 12 4 9 11 19 3 5 8 17 20 -1
+// 100 50 110 25 70 120 60 115 -1
