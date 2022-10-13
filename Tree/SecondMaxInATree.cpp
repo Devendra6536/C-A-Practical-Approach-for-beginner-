@@ -12,7 +12,7 @@ void findMin(TreeNode* root){
 int findSecondMinimumValue(TreeNode* root) {
         
         findMin(root);
-        if(s.size() < 1) return -1;
+        if(s.size() < 2) return -1;
         auto it = s.begin();
         ++it;
         return *it;
