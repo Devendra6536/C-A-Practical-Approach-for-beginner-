@@ -26,7 +26,7 @@ int xparent,yparent,xdepth,ydepth;
         
         if(xdepth == ydepth && xparent != yparent) return true;
         else return false;
-    }
+    }   
 int main()
 {
         /* code here */
