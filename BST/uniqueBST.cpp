@@ -18,6 +18,6 @@ int main()
         /* code here */
         int n=3;
         vector<int>dp(n+1,-1);
-        return UniqueBST(n,dp);
+        cout<<UniqueBST(n,dp);
     return 0;
 }
