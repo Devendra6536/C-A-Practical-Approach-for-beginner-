@@ -16,8 +16,10 @@ int UniqueBST(int n, vector<int>&dp){
 int main()
 {
         /* code here */
-        int n=3;
+        int n{10};
         vector<int>dp(n+1,-1);
         cout<<UniqueBST(n,dp);
+        int count{};
+        cout<<"The value of count is "<<count;
     return 0;
 }
