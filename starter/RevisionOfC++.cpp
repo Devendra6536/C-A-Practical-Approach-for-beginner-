@@ -13,10 +13,17 @@ int main()
         cout<<sizeof(b)<<endl;
         cout<<sizeof(c)<<endl;
         cout<<sizeof(d)<<endl;
+        cout<<"\a"<<endl;
 
         typedef int feet;
         feet distance;
         cout<<sizeof(distance)<<endl;
+
+
+        for(int i=0;i<10;i++){
+            int j = rand();
+            cout<<j<<endl;
+        }
 
     return 0;
 }
