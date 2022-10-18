@@ -15,7 +15,7 @@ int main()
 {
         /* code here */
         int n = 10;
-        if(isUgly(n)) cout<<"the no is ugly";
+        if(isUgly(n)) cout<<"This is  a Ugly Number";
         else cout<< "The No is not Ugly";
 
     return 0;
