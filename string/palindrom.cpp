@@ -23,20 +23,26 @@ bool isPalindrome(string s) {
 bool validPalindrome(string s) {
         
         int n = s.length();
-        string ss="";
+        int flag;
         for(int i=0;i<n;i++){
-            ss = "";
+            flag=0;
             for(int j=0;j<n;j++){
-                if(i!=j) ss.push_back(s[j]);
+                if(i!=j) {
+                     int k = 0;
+             int m = s.length()-1;
+            while(k<m ){
+                if(k==i || m==i) continue;
+                if(s[k++] != s[m--]){
+                    flag=1;
+                }
+            }
+            if(flag==0) return true;
+            }
             }
             
-            int k = 0;
-            int m = ss.length();
-            while(k<m){
-                if(ss[k++] != ss[m--]) return false;
-            }
+           
         }
-     return true;
+     return false;
 }
 void capitalToSmallLetter(string s){
     for(int i=0;i<s.size();i++){
@@ -46,14 +52,12 @@ void capitalToSmallLetter(string s){
 int main()
 {
         /* code here */
-        char c=65;
-        cout<<c<<endl;
         string s="ABCDE";
         capitalToSmallLetter(s);        
         cout<<endl;
         isPalindrome(s) ? cout<<"Yes" : cout<<"No";
         cout<<endl;
-         s = "aba";
+         s = "abc";
         validPalindrome(s)? cout<<"Yes" : cout<<"No";
 
         
