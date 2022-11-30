@@ -14,8 +14,10 @@ int main()
             for(int j=0;j<n;j++){
                 if(i==j) v.push_back("*");
                 else if(i==r && c==j) v.push_back("*");
-                else  v.push_back(to_string(cnt));
-                // else v.push_back(" ");
+                else {
+                    if(i==0) v.push_back(to_string(cnt)+" ");
+                    else v.push_back(to_string(cnt));
+                } 
                 cnt++;
             }
             r++;
