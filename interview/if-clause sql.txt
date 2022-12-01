@@ -1,0 +1,10 @@
+select col1,col2,
+CASE
+	when condition1 then result1
+	when condition2 then result2
+	when condition3 then result3
+	when condition4 then result4
+	when condition5 then result5
+	ELSE result alias_name
+end As alias_name
+from table_name;
