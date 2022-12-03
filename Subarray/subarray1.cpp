@@ -2,7 +2,7 @@
 #include<bits/stdc++.h>
  
 using namespace std;
-
+// subarray with maximum sum
 int main()
 {
         /* code here */
@@ -15,22 +15,19 @@ int main()
         cin>>arr[i];
     }
 
-int sums=0,sum=0;
+int sums=0;
     for(int i=0;i<n;i++){
         for(int j=i;j<n;j++){
-            sum=0;
+            int currSum=0;
             for(int k=i;k<=j;k++){
-                // cout<<arr[k]<<" ";
-                sum += arr[k];
+                cout<<arr[k]<<" ";
+                currSum += arr[k];
                 
             }
-            sums = max(sum,sums);
+            sums = max(currSum,sums);
             cout<<endl;
         }
     }
-    cout<<sums<<endl;
-
-
-    
+    cout<<sums<<endl;   
     return 0;
 }       

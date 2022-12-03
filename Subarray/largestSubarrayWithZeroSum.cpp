@@ -8,17 +8,11 @@ int largestSubArrayWithZeroSum(vector<int> &A,int n){
     unordered_map<int,int>mp;
     for(int i=0;i<n;i++){
         sum+=A[i];
-        if(sum==0){
-            maxx = i+1;
-        }
+        if(sum==0) maxx = i+1;
         else{
 
-            if(mp.find(sum) != mp.end()){
-                maxx = max(maxx,i-mp[sum]);
-            }
-            else{
-                mp[sum] = i;
-            }
+            if(mp.find(sum) != mp.end()) maxx = max(maxx,i-mp[sum]);
+            else mp[sum] = i;
         }
     }
     return maxx;
