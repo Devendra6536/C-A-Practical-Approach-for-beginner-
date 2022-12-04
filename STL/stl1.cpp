@@ -15,9 +15,9 @@ int main()
         cout<<a.first<<" "<<a.second<<endl;
         cout<<b.first<<" "<<b.second<<endl;
 
-cout<<endl;
-swap(a,b);
-cout<<a.first<<" "<<a.second<<endl;
+        cout<<endl;
+        swap(a,b);
+        cout<<a.first<<" "<<a.second<<endl;
         cout<<b.first<<" "<<b.second<<endl;
 
         map<int,int>mp;
@@ -29,7 +29,7 @@ cout<<a.first<<" "<<a.second<<endl;
         for(auto it:mp){
             cout<<it.first<<"\t"<<it.second<<endl;
         }
-cout<<endl;
+        cout<<endl;
         auto it1  = mp.find(6);
         auto it2  = mp.find(9);
         // mp.erase(mp.begin(),mp.end());
@@ -75,7 +75,7 @@ cout<<endl;
         mp.erase(mp.find(2),mp.find(5));
         for(auto it:mp){
             cout<<it.first<<"\t "<<it.second<<endl;
-        }*/
+        }
 
 
 
@@ -133,12 +133,46 @@ cout<<endl<<endl;
     s.emplace(200);
     cout<<s.size()<<endl;
     cout<<s.count(1)<<endl;
-    s.erase(s.find(1),s.find(1)+2);
+    s.erase(s.find(1));
     cout<<s.count(1)<<endl;
 
 
 
 
-       
+
+map<int,int>mp;
+        
+        cout<<mp.size()<<" "<<mp.max_size()<<endl;
+        for(int i=0;i<10;i++){
+            mp[i] = i;
+        }
+        for(auto it:mp){
+            cout<<it.first<<"\t"<<it.second<<endl;
+        }
+        mp.erase(mp.begin(),mp.end());
+        cout<<endl;
+       for(auto it:mp){
+            cout<<it.first<<"\t"<<it.second<<endl;
+        }
+        cout<<mp.size()<<endl;*/
+
+
+
+        vector<int>v;
+        v.push_back(4);
+        v.push_back(40);
+        v.push_back(400);
+        v.push_back(4000);
+        int el = *max_element(v.begin(),v.end());
+        cout<<el<<endl;
+        int ell = *min_element(v.begin(),v.end());
+        cout<<ell<<endl;
+        int arr[4] = {4,5,7,8};
+        int mini = *max_element(arr,arr+4);
+        cout<<mini<<endl;
+
+        auto it = find(arr,arr+4,8);
+        cout<<it-arr<<endl;
+
     return 0;
 }

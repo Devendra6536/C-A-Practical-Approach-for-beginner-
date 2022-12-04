@@ -7,17 +7,12 @@ void print(vector<int>v){
     int n = v.size();
     for(int i=0;i<n;i++){
         cout<<v[i]<<" ";
-
-    // sum+=v[i];
     }
     cout<<endl;
-    // cout<<sum<<endl;
-    // if(v.size()==0){
-	// 	cout<<"{}";
-	// }
 }
 void SubSequence(int index,int arr[],vector<int>v,int n){
-    if(index >= n){
+    if(index>=n){
+        
        print(v);
        return; 
     }
