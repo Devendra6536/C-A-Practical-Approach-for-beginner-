@@ -2,6 +2,13 @@
 #include<bits/stdc++.h>
 #include<vector>
 using namespace std;
+class example{
+    public:
+    int a;
+    int b;
+    int c;
+    int*d;
+};
 int main()
 {
         /* code here */
@@ -22,11 +29,23 @@ int main()
         cout<<*p<<endl;
         cout<<sizeof(p)<<endl;
         int a;
-        cout<<a<<endl;*/
+        cout<<a<<endl;
 
         int a,b,c;
         a=b=c=10;
-        cout<<a<<" "<<b<<" "<<c<<endl;
+        cout<<a<<" "<<b<<" "<<c<<endl;d
+
+        int d,e;
+        (d=e)=100;
+        cout<<d<<" "<<e<<" "<<endl;
+        */
+
+       example e1;
+       cout<<sizeof(example)<<endl;
+       cout<<sizeof(e1)<<endl;
+
+       int arr[]={10,20,30,40,50};
+       cout<<sizeof(arr)<<endl;
 
 
 

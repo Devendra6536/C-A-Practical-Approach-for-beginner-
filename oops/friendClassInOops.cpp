@@ -3,11 +3,10 @@
 #include<vector>
 using namespace std;
 class A{
+    private:
+        friend class B;
     protected:
-        int x=50;
-
-        
-    friend class B;
+        int x=50;        
 };
 
 class B{
