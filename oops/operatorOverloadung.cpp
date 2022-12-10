@@ -2,10 +2,9 @@
 #include<bits/stdc++.h>
 #include<vector>
 using namespace std;
-/*class operatorOverloadung
+class operatorOverloadung
 {
 private:
-    /* data 
     int num = 45;
 public:
 int operator ++(){
@@ -13,13 +12,13 @@ int operator ++(){
     return num;
 }
 
-};*/
+};
 
 class realandimg{
     private:
         int real,img;
     public:
-       realandimg():real(0),img(0){};
+    //    realandimg():real(0),img(0){};
        void setdata(int i,int j){
         real = i;
         img = j;
@@ -38,11 +37,12 @@ class realandimg{
 int main()
 {
         /* code here */
-        // operatorOverloadung o;
-        // cout<<++o;
+        operatorOverloadung o;
+        cout<<++o<<endl;
         realandimg ri;
         realandimg ri1;
         ri1.setdata(15,25);
+        ri.setdata(15,25);
         realandimg r3 = ri+ri1;
         r3.print();
 

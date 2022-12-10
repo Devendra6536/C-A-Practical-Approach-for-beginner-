@@ -26,7 +26,7 @@ void SubSequence(int index,int arr[],vector<int>v,int n){
 int main()
 {
         /* code here */
-    int arr[] = {4,5,2,1};
+    int arr[] = {4,4,3,2,1};
     int n = sizeof(arr)/sizeof(arr[0]);
     vector<int>V;
     SubSequence(0,arr,V,n);
