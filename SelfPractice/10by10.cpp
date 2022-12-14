@@ -12,8 +12,7 @@ int main()
         for(int i=0;i<n;i++){
             vector<string>v;
             for(int j=0;j<n;j++){
-                if(i==j) v.push_back("*");
-                else if(i==r && c==j) v.push_back("*");
+                if(i==j || c==j) v.push_back("*");
                 else {
                     if(i==0) v.push_back(to_string(cnt)+" ");
                     else v.push_back(to_string(cnt));
@@ -29,6 +28,23 @@ int main()
                 cout<<vec[i][j]<<" ";
             }
             cout<<endl;
+        }
+
+        cout<<endl<<endl;
+        cout<<endl<<endl;
+        cout<<endl<<endl;
+
+         n = 20;
+         r=0, c=20;
+        for(int i=0;i<n;i++){
+            vector<string>v;
+            for(int j=0;j<n;j++){
+                if(i==j || c==j ||j==n-1||j==0 ||i==0||i==n-1) cout<<"*";
+                else cout<<" ";
+                cnt++;
+            }
+            cout<<endl;
+            c--;
         }
 
     return 0;
