@@ -74,6 +74,7 @@
         "xtree": "cpp",
         "xutility": "cpp",
         "xlocale": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "xlocinfo": "cpp"
     }
 }
